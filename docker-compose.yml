@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    env_file: 'backend.env'
+    stdin_open: true
+    tty: true
+    ports:
+      - "8501:8501"
+    depends_on:
+      - llm
+      
+  llm:
+    provider:
+      type: model
+      options:
+        model: hf.co/vtriple/llama-3.1-8b-cyber
