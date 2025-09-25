@@ -43,7 +43,7 @@ def chat_with_openai():
             continue
 
         try:
-            model = os.getenv("MODEL", "hf.co/vtriple/llama-3.1-8b-cyber")
+            model = os.getenv("MODEL", "ai/llama3.2")
             response = client.chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": user_input}]
